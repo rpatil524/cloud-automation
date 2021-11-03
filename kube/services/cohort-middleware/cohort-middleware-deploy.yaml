@@ -21,9 +21,6 @@ spec:
         app: cohort-middleware
         public: "yes"
         tags.datadoghq.com/service: "cohort-middleware"
-        GEN3_ENV_LABEL
-        GEN3_COHORT-MIDDLEWARE_VERSION
-        GEN3_DATE_LABEL
     spec:
       affinity:
         podAntiAffinity:
@@ -44,7 +41,7 @@ spec:
             secretName: cohort-middleware-config
       containers:
         - name: cohort-middleware
-          GEN3_COHORT-MIDDLEWARE_IMAGE|-image: quay.io/cdis/cohort-middleware:latest-|
+          image: quay.io/cdis/cohort-middleware:latest
           env:
           - name: DD_ENABLED
             valueFrom:
